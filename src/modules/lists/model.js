@@ -1,6 +1,7 @@
 const joi = require('@hapi/joi');
 
 const createModel = joi.object().keys({
+  userId: joi.string().required(),
   name: joi.string().required(),
   description: joi.string().required(),
 });
