@@ -1,6 +1,6 @@
 module.exports = {
   port: 'PORT',
   database: {
-    url: 'MONGODB',
+    url: 'MONGODB_URI',
   },
 };
