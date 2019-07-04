@@ -11,7 +11,7 @@ module.exports = (firstname, lastname, email, password) => {
     err.status = 500;
     throw err;
   }
-  const encryptedPassword = bcrypt.hash(password, 10);
+  const encryptedPassword = bcrypt.hashSync(password, 10);
 
   return findIfEmailExists(email)
     .then(createModel.validate({
