@@ -3,7 +3,6 @@ const config = require('config');
 
 const {
   url,
-  name,
 } = config.get('database');
 
 module.exports = () => {
@@ -11,7 +10,7 @@ module.exports = () => {
     MongoClient.connect(url, (err, client) => {
       if (err) return reject(err);
 
-      return resolve(client.db(name));
+      return resolve(client.db());
     });
   });
 };
