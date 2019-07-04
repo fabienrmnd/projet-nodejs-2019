@@ -1,4 +1,4 @@
-const { creationModel } = require('../model');
+const { createModel } = require('../model');
 const connect = require('../../../clients/mongodb');
 const collections = require('../../../enums/collections');
 const listFindOneById = require('../../lists/services/findOneById');
@@ -10,7 +10,7 @@ module.exports = (taskToCreate, listId) => {
     checked: false,
   };
 
-  return creationModel.validate(task)
+  return createModel.validate(task)
     .then(() => listFindOneById(listId))
     .then(() => connect())
     .then(db => db.collection(collections.TASKS))
